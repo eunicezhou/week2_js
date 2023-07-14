@@ -49,14 +49,11 @@ function calculateSumOfBonus(data){
         if(performance == "above average"){
             bonus = newSalary*0.1;
             showOf = console.log(d[i].name+" get bonus "+bonus+" dollars");
-            document.getElementById("project_2").innerHTML=showOf;
         }else if(performance == "average"){
             bonus = newSalary*0.05;
             showOf = console.log(d[i].name+" get bonus "+bonus+" dollars");
-            document.getElementById("project_2").innerHTML=showOf;
         }else{
             showOf = console.log(d[i].name+" don't get any bonus");
-            document.getElementById("project_2").innerHTML=showOf;
         }
     }
 }
