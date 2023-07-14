@@ -44,18 +44,19 @@ function calculateSumOfBonus(data){
             newSalary =Number(salary.replace(',', ''));
         }
         var performance = d[i].performance;
-        var bonus;
+        var bonus = 0;
         // 判斷員工表現，依照表現及薪資計算津貼
         if(performance == "above average"){
-            bonus = newSalary*0.1;
+            bonus += newSalary*0.1;
             showOf = console.log(d[i].name+" get bonus "+bonus+" dollars");
         }else if(performance == "average"){
-            bonus = newSalary*0.05;
+            bonus += newSalary*0.05;
             showOf = console.log(d[i].name+" get bonus "+bonus+" dollars");
-        }else{
-            showOf = console.log(d[i].name+" don't get any bonus");
+        }else{ 
+            continue;
         }
     }
+    console.log(bonus);
 }
 calculateSumOfBonus({"employees":[
     {
