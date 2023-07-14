@@ -32,28 +32,23 @@ findAndPrint({
 });
 
 function calculateSumOfBonus(data){
-    var file = data["employees"];
-    var d = Object.values(file);
-    for (let i = 0;i<d.length;i++){
+    var d = data["employees"];
+    var bonus = 0;
+    for (let i = 0 ; i < d.length ; i++){
         // 先將salary的值全部轉成字串
         var salary = String(d[i].salary);
         // 判斷salary字串中是否有"USD"，若有就將其乘以30。最後所有的salary都會被轉為數值
         if(salary.includes('USD')){
-            newSalary = Number(salary.replace(/[^\d.-]/g, '')) * 30;
+            newSalary = Number(salary.replace("USD",'')) * 30;
         }else{
-            newSalary =Number(salary.replace(',', ''));
+            newSalary = Number(salary.replace(',',''));
         }
         var performance = d[i].performance;
-        var bonus = 0;
         // 判斷員工表現，依照表現及薪資計算津貼
         if(performance == "above average"){
-            bonus += newSalary*0.1;
-            showOf = console.log(d[i].name+" get bonus "+bonus+" dollars");
+            bonus += newSalary * 0.1;
         }else if(performance == "average"){
-            bonus += newSalary*0.05;
-            showOf = console.log(d[i].name+" get bonus "+bonus+" dollars");
-        }else{ 
-            continue;
+            bonus += newSalary * 0.05;
         }
     }
     console.log(bonus);
@@ -141,4 +136,5 @@ function getNumber(index){
 getNumber(1);
 getNumber(5);
 getNumber(10);
+    
     
