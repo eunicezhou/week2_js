@@ -48,14 +48,14 @@ function calculateSumOfBonus(data){
         // 判斷員工表現，依照表現及薪資計算津貼
         if(performance == "above average"){
             bonus = newSalary*0.1;
-            showOf = console.log(d[i].name+"! Congradulations! Your performance was so great ! You get bonus "+bonus+" dollars");
+            showOf = console.log(d[i].name+" get bonus "+bonus+" dollars");
             document.getElementById("project_2").innerHTML=showOf;
         }else if(performance == "average"){
             bonus = newSalary*0.05;
-            showOf = console.log(d[i].name+" You performed well but not enough !Here's your bonus "+bonus+" dollars");
+            showOf = console.log(d[i].name+" get bonus "+bonus+" dollars");
             document.getElementById("project_2").innerHTML=showOf;
         }else{
-            showOf = console.log(d[i].name+" Sorry~Your KPI is not good enough , but don't give up . If you perform well next month , you'll get what you deserve");
+            showOf = console.log(d[i].name+" don't get any bonus");
             document.getElementById("project_2").innerHTML=showOf;
         }
     }
